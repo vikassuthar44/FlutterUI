@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui/screens/SignInPage.dart';
+import 'package:ui_flutter/screens/SignInPage.dart';
 
 void main() => runApp(const MyApp());
 
