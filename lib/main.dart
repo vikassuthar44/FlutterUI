@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ui_flutter/screens/SignInPage.dart';
+import 'package:flutter_ui/screens/SignInPage.dart';
+import 'package:flutter_ui/screens/SearchFilterBottomSheet.dart';
 
 void main() => runApp(const MyApp());
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: "Scratch App",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.pink),
-      home: const SignInScreen(),
+      home:  SearchBottomSheetScreen(),
     );
   }
 }
