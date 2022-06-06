@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_flutter/screens/OtpScreen.dart';
 
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
