@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_flutter/screens/OtpScreen.dart';
+import 'package:ui_flutter/screens/LandingScreen.dart';
 
 
 void main() => runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: "Scratch App",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.green),
-      home:  OtpScreen(),
+      home:  LandingScreen(),
     );
   }
 }
