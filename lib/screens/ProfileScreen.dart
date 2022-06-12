@@ -68,30 +68,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return ListView.builder(
         scrollDirection: Axis.vertical,
         shrinkWrap: true,
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(10.0),
         itemCount: profileSettinglist.length,
         itemBuilder: (BuildContext context, int index) {
-          return Container(
-            margin: const EdgeInsets.symmetric(vertical: 5.0),
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 25.0),
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10.0)),
-              color: Colors.white
-                ),
-            child: Row(
-              children: [
-                Icon(profileSettinglist[index].icons),
-                const SizedBox(
-                  width: 20.0,
-                ),
-                Text(
-                  profileSettinglist[index].name,
-                  style: const TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.0),
-                )
-              ],
+          return Card(
+            color: Colors.white,
+            margin: const EdgeInsets.all(5.0),
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10.0))
+            ),
+            child: ListTile(
+              leading: Icon(profileSettinglist[index].icons, color: Colors.black,),
+              title: Text(profileSettinglist[index].name,style: const TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16.0)),
+              trailing: const Icon(Icons.arrow_forward_ios, color: Colors.black,),
+              contentPadding: const EdgeInsets.all(10.0),
             ),
           );
         });
