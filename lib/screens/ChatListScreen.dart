@@ -36,6 +36,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.blue,
       appBar: AppBar(
@@ -51,9 +52,9 @@ class _ChatListScreenState extends State<ChatListScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
+           Padding(
+            padding: size.width>600 ? EdgeInsets.all(25.0) : EdgeInsets.all(16.0),
+            child: const Text(
               "Chat with \nyour friends",
               style: TextStyle(
                   color: Colors.white,
@@ -76,15 +77,17 @@ class _ChatListScreenState extends State<ChatListScreen> {
               ],
             ),
           ),
-          Container(
-            height: 537,
-            decoration: const BoxDecoration(
-                color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(40.0), topLeft: Radius.circular(40.0)
-              )
+          Expanded(
+            child: Container(
+              height: 537,
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(40.0), topLeft: Radius.circular(40.0)
+                )
+              ),
+              child: profileChatList(),
             ),
-            child: profileChatList(),
           )
         ],
       ),
@@ -92,34 +95,36 @@ class _ChatListScreenState extends State<ChatListScreen> {
   }
 
   Widget profileChatList() {
-    return ListView.separated(
-        separatorBuilder: (BuildContext context, int index) {
-          return const SizedBox(height: 10.0);
-        },
-        scrollDirection: Axis.vertical,
-        shrinkWrap: true,
-        itemCount: storyLists.length,
-        padding: const EdgeInsets.all(16.0),
-        itemBuilder: (BuildContext context, int index) {
-           return ListTile(
-             contentPadding: const EdgeInsets.all(5.0),
-             title: Text(storyLists[index].name, style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
-             subtitle: Text(storyLists[index].lastMsg, style: const TextStyle(fontSize: 12.0),),
-             leading:  Container(
-               width: 50.0,
-               height: 50.0,
-               decoration: BoxDecoration(
-                 color: storyLists[index].bgColor,
-                 image:  DecorationImage(
-                   image: NetworkImage(
-                       storyLists[index].profilePic),
-                   fit: BoxFit.cover,
+    return Expanded(
+      child: ListView.separated(
+          separatorBuilder: (BuildContext context, int index) {
+            return const SizedBox(height: 10.0);
+          },
+          scrollDirection: Axis.vertical,
+          shrinkWrap: true,
+          itemCount: storyLists.length,
+          padding: const EdgeInsets.all(16.0),
+          itemBuilder: (BuildContext context, int index) {
+             return ListTile(
+               contentPadding: const EdgeInsets.all(5.0),
+               title: Text(storyLists[index].name, style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
+               subtitle: Text(storyLists[index].lastMsg, style: const TextStyle(fontSize: 12.0),),
+               leading:  Container(
+                 width: 50.0,
+                 height: 50.0,
+                 decoration: BoxDecoration(
+                   color: storyLists[index].bgColor,
+                   image:  DecorationImage(
+                     image: NetworkImage(
+                         storyLists[index].profilePic),
+                     fit: BoxFit.cover,
+                   ),
+                   borderRadius: const BorderRadius.all(Radius.circular(50.0)),
                  ),
-                 borderRadius: const BorderRadius.all(Radius.circular(50.0)),
                ),
-             ),
-           );
-        }
+             );
+          }
+      ),
     );
   }
 
