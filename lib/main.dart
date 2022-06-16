@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_flutter/screens/OtpScreen.dart';
-import 'package:ui_flutter/screens/ChatListScreen.dart';
+import 'package:ui_flutter/screens/EComAppHomeScreen.dart';
 
 
 void main() => runApp(const MyApp());
@@ -10,12 +10,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color whatsappcolor = Color(0x128C7E);
+    Color whatsappcolor = Color(0xfff);
     return MaterialApp(
       title: "Flutter UI",
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.green),
-      home:  ChatListScreen(),
+      theme: ThemeData(primarySwatch: Colors.orange),
+      home:  EComAppHomeScreen(),
     );
   }
 }
