@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_flutter/screens/OtpScreen.dart';
-import 'package:ui_flutter/screens/EComAppHomeScreen.dart';
+import 'package:ui_flutter/screens/WhatsAppProfileScreen.dart';
 
 
 void main() => runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: "Flutter UI",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.orange),
-      home:  EComAppHomeScreen(),
+      home:  WhatsAppProfileScreen(),
     );
   }
 }
