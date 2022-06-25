@@ -57,6 +57,7 @@ class _EComAppHomeScreenState extends State<EComAppHomeScreen> {
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
+          centerTitle: true,
           leading: Container(
             margin: const EdgeInsets.all(8.0),
             decoration: const BoxDecoration(
@@ -98,7 +99,7 @@ class _EComAppHomeScreenState extends State<EComAppHomeScreen> {
               const SizedBox(
                 height: 10.0,
               ),
-              titleText("Find all yours style here!"),
+              titleText("Hi Vikas Good Morning!"),
               const SizedBox(
                 height: 20.0,
               ),
