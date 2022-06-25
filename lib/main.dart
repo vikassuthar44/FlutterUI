@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ui_flutter/screens/OtpScreen.dart';
 import 'package:ui_flutter/screens/WhatsAppProfileScreen.dart';
+import 'package:ui_flutter/pageanimation/FirstPageScreen.dart';
+import 'package:ui_flutter/animatedContainer/AnimatedContainerClass.dart';
 
 
 void main() => runApp(const MyApp());
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: "Flutter UI",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.orange),
-      home:  WhatsAppProfileScreen(),
+      home:  AnimatedContainerClass(),
     );
   }
 }

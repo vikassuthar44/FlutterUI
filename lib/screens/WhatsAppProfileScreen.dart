@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class WhatsAppProfileScreen extends StatefulWidget {
@@ -12,6 +13,7 @@ class _WhatsAppProfileState extends State<WhatsAppProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         elevation: 1.0,
         backgroundColor: Colors.white,
         leading: Row(
@@ -41,6 +43,7 @@ class _WhatsAppProfileState extends State<WhatsAppProfileScreen> {
               const SizedBox(
                 height: 20.0,
               ),
+              //clickable(),
               profileView(),
               const SizedBox(
                 height: 20.0,
@@ -59,11 +62,25 @@ class _WhatsAppProfileState extends State<WhatsAppProfileScreen> {
               const SizedBox(height: 10.0,),
               shareView(),
               const SizedBox(height: 10.0,),
-              reportView()
+              reportView(),
+              const SizedBox(height: 40.0,),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  clickable() {
+    return GestureDetector(
+      child: Container(
+        width: 200,
+        height: 100,
+        color: Colors.white,
+      ),
+      onTap: () {
+
+      },
     );
   }
 
@@ -111,26 +128,29 @@ class _WhatsAppProfileState extends State<WhatsAppProfileScreen> {
   }
 
   singleCallView(String title, IconData icons) {
-    return Container(
-      width: 80,
-      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(10.0))
+    return InkWell(
+      child: Container(
+        width: 80,
+        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(10.0))
+        ),
+        child: Column(
+          children: [
+            Icon(icons, color: Colors.blueAccent,),
+            const SizedBox(height: 5.0),
+            Text(title, style: const TextStyle(color: Colors.blueAccent),)
+          ],
+        ),
       ),
-      child: Column(
-        children: [
-          Icon(icons, color: Colors.blueAccent,),
-          const SizedBox(height: 5.0),
-          Text(title, style: const TextStyle(color: Colors.blueAccent),)
-        ],
-      ),
+      onTap: () {},
     );
   }
 
   aboutView() {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10.0),
+      margin: const EdgeInsets.symmetric(horizontal: 10.0),
       width: double.infinity,
       padding: const EdgeInsets.all(10.0),
       decoration: const BoxDecoration(
