@@ -35,6 +35,10 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   bottom_navy_bar: ^6.0.0
+  http: ^0.13.4
+  fl_chart: ^0.55.0
+  equatable: ^2.0.0
+  flutter_bloc: ^8.0.1
 
 dev_dependencies:
   flutter_test:
@@ -66,7 +70,6 @@ flutter:
     - images/light_rainsun.png
     - images/partly_cloudy.png
     - images/rainy.png
-    - images/face.png
     - images/flying-kite.png
     - images/men.webp
     - images/mens.webp
@@ -74,6 +77,15 @@ flutter:
     - images/jogger.webp
     - images/socks.webp
     - images/women.webp
+    - images/surfing.png
+    - images/profile.png
+    - images/mastercard.png
+    - images/sandwich.png
+    - images/credit-card.png
+    - images/paypal.png
+    - images/taxi.png
+    - images/shopping-bag.png
+    - images/listen_music.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
