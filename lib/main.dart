@@ -10,6 +10,7 @@ import 'package:ui_flutter/stack/stack.dart';
 
 import 'airbnb/pages/airbnb_homr_page.dart';
 import 'animation/animation_class.dart';
+import 'coinbase/pages/coinbase_homepage.dart';
 import 'counterdisplay/counter_display.dart';
 import 'donwloadbutton/download_botton.dart';
 import 'form/form_validate.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       title: "Flutter UI",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home:  AirbnbHomePage(),
+      home:  const CoinbaseHomepage(),
     );
   }
 }
