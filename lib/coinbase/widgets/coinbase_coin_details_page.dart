@@ -1,4 +1,3 @@
-
 import 'dart:math';
 
 import 'package:fl_chart/fl_chart.dart';
@@ -24,7 +23,8 @@ class _CoinbaseCoinDetailsState extends State<CoinbaseCoinDetails> {
 
   @override
   void initState() {
-    _getCoinHourly = CoinbaseRepository.getCoinHourlyData(widget.coinbaseCoin.ticker);
+    _getCoinHourly =
+        CoinbaseRepository.getCoinHourlyData(widget.coinbaseCoin.ticker);
     _coinPrice = widget.coinbaseCoin.price;
     super.initState();
   }
@@ -104,7 +104,8 @@ class _CoinbaseCoinDetailsState extends State<CoinbaseCoinDetails> {
             FutureBuilder<List<CoinbaseCoinData>>(
                 future: _getCoinHourly,
                 builder: (context, snapshot) {
-                  if(snapshot.connectionState == ConnectionState.done && snapshot.data != null) {
+                  if (snapshot.connectionState == ConnectionState.done &&
+                      snapshot.data != null) {
                     final f = convertToSpots(snapshot.data!);
                     return CoinHourlyWidget(
                         flsopts: f[0],
@@ -206,14 +207,16 @@ class CoinHourlyWidget extends StatefulWidget {
   final double minPrice;
   final double minTime;
   final Function(double?) priceCallback;
-  const CoinHourlyWidget({
-    required this.flsopts,
-    required this.maxPrice,
-    required this.maxTime,
-    required this.minPrice,
-    required this.minTime,
-    required this.priceCallback,
-    Key? key}) : super(key: key);
+
+  const CoinHourlyWidget(
+      {required this.flsopts,
+      required this.maxPrice,
+      required this.maxTime,
+      required this.minPrice,
+      required this.minTime,
+      required this.priceCallback,
+      Key? key})
+      : super(key: key);
 
   @override
   State<CoinHourlyWidget> createState() => _CoinHourlyWidgetState();
@@ -223,32 +226,28 @@ class _CoinHourlyWidgetState extends State<CoinHourlyWidget> {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-        aspectRatio: 1.7,
-      child: LineChart(
-        LineChartData(
+      aspectRatio: 1.7,
+      child: LineChart(LineChartData(
           backgroundColor: Colors.transparent,
           gridData: FlGridData(
-            show: false,
-            drawVerticalLine: true,
-            horizontalInterval: 1,
-            verticalInterval: 1
-          ),
+              show: false,
+              drawVerticalLine: true,
+              horizontalInterval: 1,
+              verticalInterval: 1),
           lineTouchData: LineTouchData(
             enabled: true,
-            touchCallback: (c,cc) {
+            touchCallback: (c, cc) {
               widget.priceCallback(cc?.lineBarSpots?[0].y);
             },
             touchTooltipData: LineTouchTooltipData(
               tooltipBgColor: Colors.transparent,
-              tooltipPadding:  const EdgeInsets.all(10),
+              tooltipPadding: const EdgeInsets.all(10),
             ),
           ),
           showingTooltipIndicators: [],
           titlesData: FlTitlesData(
             show: true,
-            rightTitles: AxisTitles(
-              sideTitles: SideTitles(showTitles: false)
-            ),
+            rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
             topTitles: AxisTitles(
               sideTitles: SideTitles(showTitles: false),
             ),
@@ -261,7 +260,7 @@ class _CoinHourlyWidgetState extends State<CoinHourlyWidget> {
           ),
           borderData: FlBorderData(
             show: true,
-            border: Border.all(color: Colors.white,width: 0),
+            border: Border.all(color: Colors.white, width: 0),
           ),
           minX: widget.minTime,
           maxX: widget.maxTime,
@@ -278,10 +277,7 @@ class _CoinHourlyWidgetState extends State<CoinHourlyWidget> {
                 show: false,
               ),
             )
-          ]
-        )
-      ),
+          ])),
     );
   }
 }
-
