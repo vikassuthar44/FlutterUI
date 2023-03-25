@@ -12,6 +12,7 @@ import 'airbnb/pages/airbnb_homr_page.dart';
 import 'animation/animation_class.dart';
 import 'coinbase/pages/coinbase_homepage.dart';
 import 'counterdisplay/counter_display.dart';
+import 'disneyui/disney_home_page.dart';
 import 'donwloadbutton/download_botton.dart';
 import 'form/form_validate.dart';
 import 'landing_page_music.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
       title: "Flutter UI",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home:  const CoinbaseHomepage(),
+      home:  const DisneyHomePage(),
     );
   }
 }
