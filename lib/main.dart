@@ -10,6 +10,7 @@ import 'package:ui_flutter/stack/stack.dart';
 
 import 'airbnb/pages/airbnb_homr_page.dart';
 import 'animation/animation_class.dart';
+import 'bottomsheetanimation/bottom_sheet.dart';
 import 'coinbase/pages/coinbase_homepage.dart';
 import 'counterdisplay/counter_display.dart';
 import 'disneyui/disney_home_page.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       title: "Flutter UI",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home:  const DisneyHomePage(),
+      home:  const BottomSheetWidget(),
     );
   }
 }
